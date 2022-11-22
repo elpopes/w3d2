@@ -6,6 +6,15 @@ class Card
         @faceup = false
 
     end
-    attr_reader :value
+    attr_reader :value, :faceup
+
+    def reveal 
+        @faceup = true
+    end
+
+    def hide
+        @faceup = false
+    end
+
 end
 
