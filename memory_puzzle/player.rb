@@ -1,8 +1,8 @@
 class Player
 
-    def initialize
-        @player = player
-    end
+    # def initialize
+    #     @player = player
+    # end
 
     def get_first_guess
         # @get_moves

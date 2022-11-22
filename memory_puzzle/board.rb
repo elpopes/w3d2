@@ -4,6 +4,7 @@ class Board
     def initialize
         @grid = Array.new(4){Array.new(3)}
         @cards = Deck.new
+        place_cards
     end
 
     def [](pos)
