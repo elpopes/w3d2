@@ -8,7 +8,7 @@ class Card
     end
     attr_reader :value, :faceup
 
-    def reveal 
+    def reveal
         @faceup = true
     end
 

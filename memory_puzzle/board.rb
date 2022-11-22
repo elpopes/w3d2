@@ -1,4 +1,6 @@
 require_relative "deck"
+require_relative "card"
+require "byebug"
 class Board
     attr_accessor :grid
     def initialize
@@ -36,6 +38,7 @@ class Board
         @cards.deck.shuffle!
         @grid.map! do |row|
             row.map do |pos|
+                
                 pos = @cards.deck.shift
             end
         end
