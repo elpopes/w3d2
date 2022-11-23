@@ -13,23 +13,31 @@ class Game
     def play_game
         while true
             @board.print_board
-            
            first_card = @player.get_first_guess
            row, col = first_card
-           
-            @board.grid[row][col].reveal
+            card_1 = @board.grid[row][col]
+            card_1.reveal
+            @board.print_board
             second_card = @player.get_second_guess
-            @board.grid[second_card].reveal
+            row, col = second_card
+            card_2 = @board.grid[row][col]
+            card_2.reveal
+            @board.print_board
             sleep 2
-            unless @board.grid[first_card].value == @board.grid[second_card].value
-                @board.grid[first_card].hide 
-                @board.grid[second_card].hide
+            unless card_1.value == card_2.value
+                card_1.hide 
+                card_2.hide
             end
-            if game_over?
+
+            if @board.game_over?
+                @board.print_board
                 puts "woo hoo you won!"
                 return true
             end
         end
+
+
+
     end
 
 

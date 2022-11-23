@@ -20,10 +20,11 @@ class Board
     end
 
     def print_board 
+        system "clear"
         @grid.each_with_index do |row, i|
             line = []
             row.each_with_index do |ele, j|
-                if @faceup
+                if ele.faceup
                     line << ele.value 
                 else 
                     line << "_"
@@ -43,6 +44,10 @@ class Board
             end
         end
         @grid
+    end
+
+    def game_over?
+        @grid.flatten.none? {|card| card.faceup == false}
     end
 
 end
